@@ -9,4 +9,4 @@ public class PraktikumDogodkiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PraktikumDogodkiApplication.class, args);
 	}
-}//TESTTESTTESTTEST--TEST
+}
