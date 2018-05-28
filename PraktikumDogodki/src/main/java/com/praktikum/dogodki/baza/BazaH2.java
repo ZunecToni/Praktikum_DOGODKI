@@ -1,4 +1,4 @@
-package com.praktikum.baza;
+package com.praktikum.dogodki.baza;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
