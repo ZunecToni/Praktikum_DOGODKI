@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BazaController {
 	
-	@RequestMapping(value = {});
+	@RequestMapping(value = {cghdfhddgh});
 
 }
