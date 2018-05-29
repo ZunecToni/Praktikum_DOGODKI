@@ -17,4 +17,6 @@ file>import>maven>existing maven projects;
 najdes mesto ki si ga prej izbral ;
 oznacis vse kar se ti prikaze ko oznacis (pom.xml);
 finish;
+commit:desni klik na projekt>team>commit>>klik na ikono z dvema +>dopises komentar>klik na commit&push;
+pull:desni klik na projekt>team>pull
 
