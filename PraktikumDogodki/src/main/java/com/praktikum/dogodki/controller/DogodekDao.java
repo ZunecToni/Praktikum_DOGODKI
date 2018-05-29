@@ -16,6 +16,6 @@ public class DogodekDao {
 			Date konecOdjav, int minOseb, int maxOseb, String status, boolean potrebnoPovabilo) {
 		
 		
-	}
+	} 
 
 }
