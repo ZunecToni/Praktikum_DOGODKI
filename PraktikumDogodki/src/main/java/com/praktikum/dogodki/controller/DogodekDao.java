@@ -12,10 +12,10 @@ public class DogodekDao {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-//	public void addDogodek(String naziv, String opis, String lokacija, Date zacetek, Date trajanje, Date konecPrijav,
-//			Date konecOdjav, int minOseb, int maxOseb, String status, boolean potrebnoPovabilo) {
-//		
-//		
-//	}
+	public void addDogodek(String naziv, String opis, String lokacija, Date zacetek, Date trajanje, Date konecPrijav,
+			Date konecOdjav, int minOseb, int maxOseb, String status, boolean potrebnoPovabilo) {
+		
+		
+	}
 
 }
