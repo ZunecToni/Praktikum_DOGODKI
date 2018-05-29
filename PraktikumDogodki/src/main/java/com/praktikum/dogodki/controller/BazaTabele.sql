@@ -12,12 +12,12 @@ ID_dogodek INTEGER NOT NULL,
 naziv VARCHAR(100),
 opis VARCHAR(3500),
 lokacija VARCHAR(100),
-zacetek DATE
-trajanje TIME
-konecPrijav DATE
-konecOdjav DATE
-minOseb INTEGER
-maxOseb INTEGER
+zacetek DATE,
+trajanje TIME,
+konecPrijav DATE,
+konecOdjav DATE,
+minOseb INTEGER,
+maxOseb INTEGER,
 status VARCHAR(25),
 potrebnoPovabilo BOOLEAN
 
@@ -37,7 +37,7 @@ ocena INTEGER,
 komentar VARCHAR(500)
 
 );
-ALTER TABLE DOGPRIJAVAODEK ADD(CONSTRAINT PK_PRIJAVA PRIMARY KEY (ID_prijava));
+ALTER TABLE PRIJAVA ADD(CONSTRAINT PK_PRIJAVA PRIMARY KEY (ID_prijava));
 ALTER TABLE PRIJAVA ADD(CONSTRAINT TK_PRIJAVA_ID_organizator FOREIGN KEY (TK_ID_organizator) REFERENCES (ID_organizator));
 ALTER TABLE PRIJAVA ADD(CONSTRAINT TK_PRIJAVA_ID_dogodek FOREIGN KEY (TK_ID_dogodek) REFERENCES (ID_dogodek));
 
