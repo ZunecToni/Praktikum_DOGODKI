@@ -13,6 +13,7 @@ import com.praktikum.dogodki.entities.Dogodek;
 @Controller
 public class BazaController {
 	
+
 	@Autowired
 	DogodekDao dogodekDao;
 	
@@ -35,5 +36,3 @@ public class BazaController {
 		return "redirect:/listDogodkov";
 	}
 }
-			
-
