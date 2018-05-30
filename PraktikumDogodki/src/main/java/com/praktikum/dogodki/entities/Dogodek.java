@@ -17,9 +17,10 @@ public class Dogodek {
 	private int minOseb;
 	private int maxOseb;
 	private String status;
+	private boolean potrebnoPovabilo;
 	
 	public Dogodek(String naziv, String opis, String lokacija, Date zacetek, Date trajanje, Date konecPrijav,
-			Date konecOdjav, int minOseb, int maxOseb, String status) {
+			Date konecOdjav, int minOseb, int maxOseb, String status, boolean potrebnoPovabilo) {
 		super();
 		this.naziv = naziv;
 		this.opis = opis;
@@ -31,6 +32,7 @@ public class Dogodek {
 		this.minOseb = minOseb;
 		this.maxOseb = maxOseb;
 		this.status = status;
+		this.potrebnoPovabilo = potrebnoPovabilo;
 	}
 
 	public String getNaziv() {
@@ -111,6 +113,14 @@ public class Dogodek {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public boolean isPotrebnoPovabilo() {
+		return potrebnoPovabilo;
+	}
+
+	public void setPotrebnoPovabilo(boolean potrebnoPovabilo) {
+		this.potrebnoPovabilo = potrebnoPovabilo;
 	}
 
 		
