@@ -32,7 +32,8 @@ public class BazaController {
 			@RequestParam(value="potrebnoPovabilo")boolean potrebnoPovabilo 
 			)
 	{
-		dogodekDao.addDogodek(naziv, opis, lokacija, zacetek, trajanje, konecPrijav, konecOdjav, minOseb, maxOseb, status, potrebnoPovabilo);
+		dogodekDao.addDogodek(naziv, opis, lokacija, zacetek, trajanje, konecPrijav, 
+				konecOdjav, minOseb, maxOseb, status, potrebnoPovabilo);
 		return "redirect:/listDogodkov";
 	}
 }
