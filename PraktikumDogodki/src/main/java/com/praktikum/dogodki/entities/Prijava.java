@@ -48,7 +48,7 @@ public class Prijava {
 		this.priimek = priimek;
 	}
 
-
+ 
 	public String getEmail() {
 		return email;
 	}
