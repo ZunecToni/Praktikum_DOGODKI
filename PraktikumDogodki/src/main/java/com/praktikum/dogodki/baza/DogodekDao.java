@@ -15,6 +15,7 @@ import com.praktikum.dogodki.entities.Dogodek;
 public class DogodekDao {
 	
 	@Autowired
+	static
 	JdbcTemplate jdbcTemplate;
 
 	public void addDogodek(String naziv, String opis, String lokacija, Date zacetek, Date trajanje, Date konecPrijav,
@@ -23,7 +24,7 @@ public class DogodekDao {
 		
 	} 
 	
-	public List<Dogodek> getVseDogodke(){
+	public static List<Dogodek> getVseDogodke(){
 		String sql = "SELECT * FROM DOGODEK";
 		List<Dogodek> ret = new ArrayList<Dogodek>();
 		List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql);

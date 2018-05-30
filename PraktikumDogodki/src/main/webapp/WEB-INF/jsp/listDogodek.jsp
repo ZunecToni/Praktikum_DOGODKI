@@ -9,9 +9,21 @@
 <body>
 
 
-<h1>Dobrodošli v dogodkih.</h1>
-
-
-<a href="listDogodek"> Tu imate listo dogodkov.</a>
+TEST
+    
+    <div>
+      <table border="1">
+        <tr>
+          <th>naziv</th>
+          <th>opis</th>
+        </tr>
+        <c:forEach  items="${dogodki}" var ="dogodek">
+        <tr>
+          <td>${dogodek.naziv}</td>
+          <td>${dogodek.opis}</td>
+        </tr>
+        </c:forEach>
+      </table>
+    </div>
 </body>
 </html>
