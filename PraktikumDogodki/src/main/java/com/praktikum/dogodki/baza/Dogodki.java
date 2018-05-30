@@ -9,9 +9,13 @@ import com.praktikum.dogodki.entities.Dogodek;
 
 import java.util.*;
 import java.util.Date;
-import java.sql.*;
+import java.sql.*;  
 @Component
 public class Dogodki {
+	
+	
+	
+	
 	
 
 	@Autowired
@@ -34,12 +38,15 @@ public class Dogodki {
         	int minOseb = (int) row.get("minOseb");
         	int maxOseb = (int) row.get("maxOseb");
         	String status = (String) row.get("status");
+        	Boolean potrebnoPovabilo = (Boolean) row.get("potrebnoPovabilo");
 
             ret.add(new Dogodek( naziv,  opis,  lokacija, zacetek, trajanje, konecPrijav,
-        		 konecOdjav,  minOseb, maxOseb, status));
+        		 konecOdjav,  minOseb, maxOseb, status, potrebnoPovabilo));
         }
         return ret;
     }
+	
+	
 	
 	
 	

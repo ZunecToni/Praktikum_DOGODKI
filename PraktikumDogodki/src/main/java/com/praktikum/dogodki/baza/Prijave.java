@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import com.praktikum.dogodki.entities.Prijava;
+import com.praktikum.dogodki.entities.Prijava; 
 
 @Component
 public class Prijave {
