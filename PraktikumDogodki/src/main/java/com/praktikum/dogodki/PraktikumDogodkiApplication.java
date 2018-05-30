@@ -1,4 +1,4 @@
-///sdfsfs
+///sds
 
 package com.praktikum.dogodki;
 
