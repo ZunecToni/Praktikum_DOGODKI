@@ -51,7 +51,7 @@ public class Organizator {
 	
 	public String toString() {
 		return "Uporabnik " + ime+ " " + priimek +"/n"+
-		"Email : "+ email + "/n";
+		"Email : "+ email + "/n"; 
 		
 	}
 	
