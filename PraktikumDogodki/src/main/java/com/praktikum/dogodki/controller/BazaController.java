@@ -19,19 +19,19 @@ public class BazaController {
 	@Autowired
 	DogodekDao dogodekDao;
 	
-	@RequestMapping(value = {"/addDogodek"}, method = RequestMethod.POST)
+	@RequestMapping(value = {"/addDogodek"}, method = RequestMethod.GET)
 	public String dodajDogodek(
 			@RequestParam(value="naziv")String naziv,
 			@RequestParam(value="opis")String opis,
-			@RequestParam(value="lokacija", required = false) String lokacija,
-			@RequestParam(value="zacetek", required = false)Date zacetek,
-			@RequestParam(value="trajanje", required = false)Date trajanje,
-			@RequestParam(value="konecPrijav", required = false)Date konecPrijav,
-			@RequestParam(value="konecOdjav", required = false)Date konecOdjav,
-			@RequestParam(value="minOseb", required = false)int minOseb,
-			@RequestParam(value="maxOseb", required = false)int maxOseb,
-			@RequestParam(value="status", required = false)String status,
-			@RequestParam(value="potrebnoPovabilo", required = false)boolean potrebnoPovabilo 
+			@RequestParam(value="lokacija")String lokacija,
+			@RequestParam(value="zacetek")Date zacetek,
+			@RequestParam(value="trajanje")Date trajanje,
+			@RequestParam(value="konecPrijav")Date konecPrijav,
+			@RequestParam(value="konecOdjav")Date konecOdjav,
+			@RequestParam(value="minOseb")int minOseb,
+			@RequestParam(value="maxOseb")int maxOseb,
+			@RequestParam(value="status")String status,
+			@RequestParam(value="potrebnoPovabilo")boolean potrebnoPovabilo 
 			)
 	{
 		dogodekDao.addDogodek(naziv, opis, lokacija, zacetek, trajanje, konecPrijav, 
@@ -39,12 +39,14 @@ public class BazaController {
 		return "redirect:/listDogodkov";
 	}
 	
-
-    @RequestMapping(value = { "/listDogodek" }, method = RequestMethod.GET)
-    public String seznamDogodkov(Model model)
-    {
-        model.addAttribute("dogodki",DogodekDao.getVseDogodke());
-        return "listDogodek";
-    }
-    
+	@RequestMapping(value = { "seznamDogodkov"}, method = RequestMethod.GET)
+	public String seznamDogodkov(Model model)
+	{
+		model.addAttribute("dogodki", dogodekDao.getVseDogodke() );
+		return "seznamDogodkov";
+	}
+	
+	
+	
+	
 }
