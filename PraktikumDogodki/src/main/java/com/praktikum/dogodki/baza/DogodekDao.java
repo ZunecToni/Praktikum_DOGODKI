@@ -1,4 +1,4 @@
-package com.praktikum.dogodki.controller;
+package com.praktikum.dogodki.baza;
 
 import java.util.ArrayList;
 import java.util.Date;

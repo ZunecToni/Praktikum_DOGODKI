@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.praktikum.dogodki.baza.DogodekDao;
 import com.praktikum.dogodki.entities.Dogodek;
 
 @Controller

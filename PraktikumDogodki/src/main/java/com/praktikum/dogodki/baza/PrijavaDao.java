@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import com.praktikum.dogodki.entities.Prijava; 
 
 @Component
-public class Prijave {
+public class PrijavaDao {
 
 	@Autowired
     JdbcTemplate jdbcTemplate;
