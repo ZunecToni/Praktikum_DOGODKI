@@ -17,7 +17,7 @@ public class BazaController {
 	@Autowired
 	DogodekDao dogodekDao;
 	
-	@RequestMapping(value = {"/DodajDogodek"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/addDogodek"}, method = RequestMethod.GET)
 	public String dodajDogodek(
 			@RequestParam(value="naziv")String naziv,
 			@RequestParam(value="opis")String opis,
