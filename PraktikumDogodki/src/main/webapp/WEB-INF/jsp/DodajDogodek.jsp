@@ -10,18 +10,6 @@
 <body>
 
 
-        	String naziv = (String) row.get("naziv");
-        	String opis = (String) row.get("opis");
-        	String lokacija = (String) row.get("lokacija");
-        	Date zacetek = (Date) row.get("zacetek");
-        	Date trajanje = (Date) row.get("trajanje");
-        	Date konecPrijav = (Date) row.get("konecPrijav");
-        	Date konecOdjav = (Date) row.get("konecOdjav");
-        	int minOseb = (int) row.get("minOseb");
-        	int maxOseb = (int) row.get("maxOseb");
-        	String status = (String) row.get("status");
-        	Boolean potrebnoPovabilo = (Boolean) row.get("potrebnoPovabilo");
-
 <div class="container">
     <form method="post" action="/Dodajdogodek">	
         Ime Dogodka: <input type="text" name="naziv" /> <br />

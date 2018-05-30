@@ -8,9 +8,9 @@ public class Prijava {
 	String email;
 	int Ocena;
 	String prijava;
-	String status;
+	String status; 
 	
-	
+	 
 
 	public Prijava (String ime, String priimek, String email ) {
 		this.ime = ime;
