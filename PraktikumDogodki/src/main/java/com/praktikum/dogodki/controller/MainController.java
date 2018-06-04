@@ -66,14 +66,14 @@ import com.praktikum.dogodki.baza.Dogodki;
 			
 			
 			
-			DogodekRepository.save(n);
+		//	DogodekRepository.save(n);
 			return "Saved";
 		}
 
-		@GetMapping(path="/all")
-		public @ResponseBody Iterable<Dogodki> getAllUsers() {
-			// This returns a JSON or XML with the users
-			return DogodekRepository.findAll();
-		}
+//		@GetMapping(path="/all")
+//		public @ResponseBody Iterable<Dogodki> getAllUsers() {
+//			// This returns a JSON or XML with the users
+//			return DogodekRepository.findAll();
+//		}
 
 }
