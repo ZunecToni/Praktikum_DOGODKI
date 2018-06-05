@@ -1,2 +1,2 @@
-INSERT INTO ORGANIZATOR(ime,priimek,email)VALUES('Janez','haha', 'aa@aa.aa');
-INSERT INTO ORGANIZATOR(ime,priimek,email)VALUES('hahn','huhn', 'huhn@hahn.da');
+INSERT INTO ORGANIZATOR(ime,priimek)VALUES('a ','a','a');
+INSERT INTO ORGANIZATOR(ime,priimek)VALUES('a ','a','a');
