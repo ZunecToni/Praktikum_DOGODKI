@@ -32,7 +32,7 @@ java.sql.SQLNonTransientConnectionException: Could not create connection to data
 			
 			try {
 				String driver = "com.mysql.cj.jdbc.Driver";
-				String url = "jdbc:mysql://localhost:3306/dogodki?autoReconnect=true&useSSL=false";
+				String url = "jdbc:mysql://127.0.0.1:3306/dogodki?autoReconnect=true&useSSL=false";
 				String username= "ZunecToni";
 				String password = "dogodki2018";
 				Class.forName(driver);
