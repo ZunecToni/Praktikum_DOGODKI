@@ -26,11 +26,28 @@ public class PraktikumDogodkiApplication {
 	}
 	
 
-//    public void run(String[] args) throws Exception {
-//        System.out.println("Our DataSource is = " + dataSource);
-//        Iterable<com.praktikum.dogodki.baza.Dogodki> systemlist = DogodekRepository.findAll();
-//        for(com.praktikum.dogodki.baza.Dogodki systemmodel:systemlist){
-//            System.out.println("Here is a system: " + systemmodel.toString());
-//        }
-//    }
+    public void run(String[] args) throws Exception {
+        System.out.println("Our DataSource is = " + dataSource);
+        Iterable<com.praktikum.dogodki.baza.Dogodki> systemlist = DogodekRepository.findAll();
+        for(com.praktikum.dogodki.baza.Dogodki systemmodel:systemlist){
+            System.out.println("Here is a system: " + systemmodel.toString());
+        }
+    }
 }
+
+
+
+
+
+//package com.praktikum.dogodki;
+//
+//import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
+//
+//@SpringBootApplication
+//public class PraktikumDogodkiApplication {
+//
+//	public static void main(String[] args) {
+//		SpringApplication.run(PraktikumDogodkiApplication.class, args);
+//	}
+//}
