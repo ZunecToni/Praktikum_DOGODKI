@@ -17,10 +17,11 @@ TEST
           <th>naziv</th>
           <th>opis</th>
         </tr>
-        <c:forEach  items="${dogodki}" var ="dogodek">
+        <c:forEach  items="${organizator}" var ="organizator">
         <tr>
-          <td>${dogodek.naziv}</td>
-          <td>${dogodek.opis}</td>
+          <td>${organizator.ime}</td>
+          <td>${organizator.priimek}</td>
+          <td>${organizator.email}</td>
         </tr>
         </c:forEach>
       </table>

@@ -11,6 +11,25 @@
 
 <h1>Dobrodošli v dogodkih.</h1>
 
+ 
+    <div>
+      <table border="1">
+        <tr>
+          <th>ime</th>
+          <th>priimek</th>
+          <th>email</th>
+        </tr>
+        <c:forEach  items="${organizator}" var ="dogodek">
+        <tr>
+          <td>${organizator.ime}</td>
+          <td>${organizator.priimek}</td>
+                    <td>${organizator.email}</td>
+          
+        </tr>
+        </c:forEach>
+      </table>
+    </div>
+
 
 <a href="listDogodek"> Tu imate listo dogodkov.</a>
 </body>

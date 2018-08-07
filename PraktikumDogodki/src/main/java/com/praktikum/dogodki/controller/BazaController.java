@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.praktikum.dogodki.baza.DogodekDao;
+import com.praktikum.dogodki.baza.OrganizatorDao;
 import com.praktikum.dogodki.entities.Dogodek;
 
 @Controller
@@ -44,6 +45,13 @@ public class BazaController {
 	{
 		model.addAttribute("dogodki", dogodekDao.getVseDogodke() );
 		return "seznamDogodkov";
+	}
+	
+	@RequestMapping(value = { "index"}, method = RequestMethod.GET)
+	public String organizator(Model model)
+	{
+		model.addAttribute("organizator", OrganizatorDao.getVseOrganizatorje() );
+		return "index";
 	}
 	
 	
