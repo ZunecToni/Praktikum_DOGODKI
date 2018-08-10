@@ -23,7 +23,7 @@
         <tr>
           <td>${organizator.ime}</td>
           <td>${organizator.priimek}</td>
-                    <td>${organizator.email}</td>
+          <td>${organizator.email}</td>
           
         </tr>
         </c:forEach>
