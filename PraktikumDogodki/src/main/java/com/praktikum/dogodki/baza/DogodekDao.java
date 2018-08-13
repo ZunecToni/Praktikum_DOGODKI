@@ -17,9 +17,15 @@ public class DogodekDao {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	public void addDogodek(String naziv, String opis, String lokacija, Date zacetek, Date trajanje, Date konecPrijav,
+	public int addDogodek(String naziv, String opis, String lokacija, Date zacetek, Date trajanje, Date konecPrijav,
 			Date konecOdjav, int minOseb, int maxOseb, String status, boolean potrebnoPovabilo) {
 		
+		String sql ="INSERT INTO DOGODEK ( naziv,  opis,  lokacija,  zacetek,  trajanje,  konecPrijav,"
+				+ " konecOdjav,  minOseb,  maxOseb,  status,  potrebnoPovabilo) values(?,?,?,?,?,?,?,?,?,?,?)";
+
+		return jdbcTemplate.update(sql, new Object[]{naziv,  opis,  lokacija,  zacetek,  trajanje,  konecPrijav, konecOdjav,  minOseb,  maxOseb,  status,  potrebnoPovabilo});
+		
+		//https://stackoverflow.com/questions/23702041/failed-to-convert-property-value-of-type-java-lang-string-to-required-type-java
 		
 	} 
 	
