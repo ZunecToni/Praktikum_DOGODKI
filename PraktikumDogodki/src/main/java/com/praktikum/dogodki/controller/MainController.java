@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 //import com.praktikum.dogodki.baza.DogodekRepository;
 //import com.praktikum.dogodki.baza.Dogodki;
 
+
 public class MainController {
 
 
@@ -31,6 +32,13 @@ public class MainController {
  
  
         return "addDogodek";
+    }
+    
+     
+        @RequestMapping("/listDogodek")
+        public String listDogodek() {
+            return "listDogodek";
+        }
     }
 	
 //	@Controller    // This means that this class is a Controller
@@ -76,4 +84,4 @@ public class MainController {
 ////			return DogodekRepository.findAll();
 ////		}
 
-}
+
