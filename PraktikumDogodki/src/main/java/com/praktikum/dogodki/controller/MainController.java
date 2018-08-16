@@ -1,11 +1,20 @@
 package com.praktikum.dogodki.controller;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +25,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 public class MainController {
+	
+	
+	@InitBinder
+	protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");   
+	    dateFormat.setLenient(false);
+	    binder.registerCustomEditor(Date.class, null,  new CustomDateEditor(dateFormat, true));
+	}
+	
+	//@DateTimeFormat(pattern = "yyyy-MM-dd")
 
 
     @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
@@ -33,6 +52,13 @@ public class MainController {
  
         return "addDogodek";
     }
+    
+//    @RequestMapping(method = RequestMethod.GET)
+//    ResponseEntity main(@RequestParam(name = 'trajanje', 'konecPrijav','konecOdjav') 
+//    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") LocalDateTime dateTime) {
+//        
+//        return ResponseEntity.noContent().build()
+//    }
     
      
         @RequestMapping("/listDogodek")
