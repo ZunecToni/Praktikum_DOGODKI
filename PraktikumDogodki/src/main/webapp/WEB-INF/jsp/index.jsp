@@ -71,6 +71,7 @@
         </c:forEach>
       </table>
     </div>
+    
 
 
 <a href="listDogodek"> Tu imate listo dogodkov.</a>

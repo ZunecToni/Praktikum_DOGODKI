@@ -7,6 +7,7 @@ public class Dogodek {
 	//naziv, opis, lokacija, zacetek, trajanje, konecPrijav, konecOdjav, minOseb, maxOseb, status, potrebnoPovabilo
 	//LocalDateTime.now()
 
+    private Long id;
 	private String naziv;	
 	private String opis;
 	private String lokacija;
@@ -18,23 +19,14 @@ public class Dogodek {
 	private int maxOseb;
 	private String status;
 	private boolean potrebnoPovabilo;
-	
-	public Dogodek(String naziv, String opis, String lokacija, Date zacetek, Date trajanje, Date konecPrijav,
-			Date konecOdjav, int minOseb, int maxOseb, String status, boolean potrebnoPovabilo) {
-		super();
-		this.naziv = naziv;
-		this.opis = opis;
-		this.lokacija = lokacija;
-		this.zacetek = zacetek;
-		this.trajanje = trajanje;
-		this.konecPrijav = konecPrijav;
-		this.konecOdjav = konecOdjav;
-		this.minOseb = minOseb;
-		this.maxOseb = maxOseb;
-		this.status = status;
-		this.potrebnoPovabilo = potrebnoPovabilo;
-	}
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 	public String getNaziv() {
 		return naziv;
 	}
@@ -57,6 +49,32 @@ public class Dogodek {
 
 	public void setLokacija(String lokacija) {
 		this.lokacija = lokacija;
+	}
+
+//
+	public Dogodek() {
+	}
+	
+	public Dogodek(String naziv, String lokacija) {
+		super();
+		this.naziv = naziv;
+		this.lokacija = lokacija;
+	}
+//	
+	public Dogodek(String naziv, String opis, String lokacija, Date zacetek, Date trajanje, Date konecPrijav,
+			Date konecOdjav, int minOseb, int maxOseb, String status, boolean potrebnoPovabilo) {
+		super();
+		this.naziv = naziv;
+		this.opis = opis;
+		this.lokacija = lokacija;
+		this.zacetek = zacetek;
+		this.trajanje = trajanje;
+		this.konecPrijav = konecPrijav;
+		this.konecOdjav = konecOdjav;
+		this.minOseb = minOseb;
+		this.maxOseb = maxOseb;
+		this.status = status;
+		this.potrebnoPovabilo = potrebnoPovabilo;
 	}
 
 	public Date getZacetek() {
@@ -115,10 +133,10 @@ public class Dogodek {
 		this.status = status;
 	}
 
-	public boolean isPotrebnoPovabilo() {
+	public boolean getPotrebnoPovabilo() {
 		return potrebnoPovabilo;
 	}
-
+	
 	public void setPotrebnoPovabilo(boolean potrebnoPovabilo) {
 		this.potrebnoPovabilo = potrebnoPovabilo;
 	}

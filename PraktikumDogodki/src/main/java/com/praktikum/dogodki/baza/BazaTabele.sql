@@ -1,4 +1,18 @@
 
+--https://dimitrisli.wordpress.com/2011/05/07/spring-mysql-jdbctemplate-demonstration/
+/*
+create database student265;
+use student265;
+CREATE USER student265 IDENTIFIED BY '1002349150';
+grant usage on *.* to student265@localhost identified by '1002349150';
+grant all privileges on student265.* to student265@localhost; --neven kej bi nej to blo...
+
+CREATE TABLE PERSON_RECORD (
+    ID INT NOT NULL AUTO_INCREMENT,
+    NAME VARCHAR(15) NOT NULL,
+    SURNAME VARCHAR(15) NOT NULL,
+    PRIMARY KEY (ID)
+);*/
 
 SET FOREIGN_KEY_CHECKS = 0;
 

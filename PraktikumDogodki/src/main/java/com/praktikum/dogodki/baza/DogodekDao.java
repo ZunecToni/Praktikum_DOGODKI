@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +25,14 @@ public class DogodekDao {
 				+ " konecOdjav,  minOseb,  maxOseb,  status,  potrebnoPovabilo) values(?,?,?,?,?,?,?,?,?,?,?)";
 
 		return jdbcTemplate.update(sql, new Object[]{naziv,  opis,  lokacija,  zacetek,  trajanje,  konecPrijav, konecOdjav,  minOseb,  maxOseb,  status,  potrebnoPovabilo});
+		
+		//https://stackoverflow.com/questions/23702041/failed-to-convert-property-value-of-type-java-lang-string-to-required-type-java
+		
+	} 	public int addDogodek(String naziv) {
+		
+		String sql ="INSERT INTO DOGODEK ( naziv) values(?)";
+
+		return jdbcTemplate.update(sql, new Object[]{naziv});
 		
 		//https://stackoverflow.com/questions/23702041/failed-to-convert-property-value-of-type-java-lang-string-to-required-type-java
 		
@@ -53,5 +62,35 @@ public class DogodekDao {
 		}
 		return ret;
 	}
+	public Dogodek getDogodek(String naziv, String lokacija) {
+
+        String sql = "SELECT id,ime,priimek FROM oseba WHERE ime = ? and priimek = ?";
+        Dogodek os = (Dogodek)jdbcTemplate.queryForObject(sql,new Object[] { naziv, lokacija }, 
+                                   new BeanPropertyRowMapper(Dogodek.class));
+   return os;
+}
+
+	public Dogodek getDogodek(String naziv) {
+
+        String sql = "SELECT id,ime,priimek FROM oseba WHERE ime = ? and priimek = ?";
+        Dogodek os = (Dogodek)jdbcTemplate.queryForObject(sql,new Object[] { naziv}, 
+                                   new BeanPropertyRowMapper(Dogodek.class));
+   return os;
+}
+	
+public Dogodek getOseba(int id) {
+        String sql = "SELECT * FROM oseba WHERE id = ?";
+        Dogodek o = (Dogodek)jdbcTemplate.queryForObject(sql,new Object[] { id }, 
+        new BeanPropertyRowMapper(Dogodek.class));
+        return o;
+}
+
+public String getById(int id){
+        String sql = "SELECT name FROM mojseznam WHERE id = "+id;
+        String name = (String)jdbcTemplate.queryForObject(sql, String.class);
+        return name;
+}
+
+
 
 }

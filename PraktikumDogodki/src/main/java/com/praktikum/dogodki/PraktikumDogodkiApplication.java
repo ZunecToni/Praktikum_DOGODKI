@@ -34,11 +34,6 @@
 //        }
 //    }
 //}
-
-
-
-
-
 package com.praktikum.dogodki;
 
 import org.springframework.boot.SpringApplication;

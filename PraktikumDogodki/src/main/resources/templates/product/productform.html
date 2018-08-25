@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Core Online Tutorial - Product Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+
+    <h2>Product Details</h2>
+    <div>
+        <form class="form-horizontal" th:object="${dogodek}" th:action="@{/product}" method="post">
+
+            <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                <p th:text="#{form.hasErrors}">Error Message</p>
+            </div>
+
+            <input type="hidden" th:field="*{id}"/>
+
+            <div class="form-group" th:class="${#fields.hasErrors('naziv')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Naziv:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{naziv}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('naziv')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+    <!--         <div class="form-group" th:class="${#fields.hasErrors('zacetek')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Začetek:</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" th:field="*{zacetek}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('zacetek')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group" th:class="${#fields.hasErrors('trajanje')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Trajanje:</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" th:field="*{trajanje}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('trajanje')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+             -->
+            
+            
+
+            <div class="form-group" th:class="${#fields.hasErrors('lokacija')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Lokacija:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{lokacija}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('lokacija')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+            
+            
+            <div class="form-group" th:class="${#fields.hasErrors('opis')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Opis:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{opis}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('opis')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+            
+     <!--       <div class="form-group" th:class="${#fields.hasErrors('konecPrijav')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Konec Prijav:</label>
+                <div class="col-sm-10">
+                    <input type="Date" class="form-control" th:field="*{konecPrijav}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('konecPrijav')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="form-group" th:class="${#fields.hasErrors('konecOdjav')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Konec odjav:</label>
+                <div class="col-sm-10">
+                    <input type="Date" class="form-control" th:field="*{konecOdjav}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('konecOdjav')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+-->
+            <div class="form-group" th:class="${#fields.hasErrors('minOseb')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Minimum oseb:</label>
+                <div class="col-sm-10">
+                    <input type="number" min="0" max="5000" step="0.01" class="form-control" th:field="*{minOseb}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('minOseb')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+            
+
+            <div class="form-group" th:class="${#fields.hasErrors('maxOseb')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Maximum oseb:</label>
+                <div class="col-sm-10">
+                    <input type="number" min="0" max="5000" step="0.01" class="form-control" th:field="*{maxOseb}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('maxOseb')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+            
+            
+    <!--         <div class="form-group" th:class="${#fields.hasErrors('potrebnoPovabilo')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Potrebno Povabilo?:</label>
+                <div class="col-sm-10">
+					<input type="radio" name="potrebnoPovabilo" value="DA" class="form-control" th:field="*{potrebnoPovabilo}" th:errorclass="has-error">v
+					<input type="radio" name="potrebnoPovabilo" value="NE" checked class="form-control" th:field="*{potrebnoPovabilo}" th:errorclass="has-error">v
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('potrebnoPovabilo')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+            
+           
+            
+             <div class="form-group" th:class="${#fields.hasErrors('status')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">status:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{status}" th:errorclass="has-error"/>
+
+                    <span class="help-block">
+                       <ul>
+                           <li th:each="err : ${#fields.errors('status')}" th:text="${err}" />
+                       </ul>
+                    </span>
+                </div>
+            </div>
+            -->
+            
+            <div class="row">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

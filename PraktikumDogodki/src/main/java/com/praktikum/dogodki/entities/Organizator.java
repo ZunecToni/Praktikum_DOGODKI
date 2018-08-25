@@ -3,10 +3,14 @@
 
 
 public class Organizator {
+	Long id;
 	String ime;
 	String priimek;
 	String email;
 
+	public Organizator () {
+		
+	}
 	
 	
 	public Organizator (String ime, String priimek, String email) {
@@ -24,6 +28,15 @@ public class Organizator {
 
 	public void setIme(String ime) {
 		this.ime = ime;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 
