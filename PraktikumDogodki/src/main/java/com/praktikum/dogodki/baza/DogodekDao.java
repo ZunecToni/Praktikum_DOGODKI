@@ -28,7 +28,8 @@ public class DogodekDao {
 		
 		//https://stackoverflow.com/questions/23702041/failed-to-convert-property-value-of-type-java-lang-string-to-required-type-java
 		
-	} 	public int addDogodek(String naziv) {
+	} 	
+	public int addDogodek(String naziv) {
 		
 		String sql ="INSERT INTO DOGODEK ( naziv) values(?)";
 

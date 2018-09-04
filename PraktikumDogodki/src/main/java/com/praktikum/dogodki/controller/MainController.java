@@ -53,6 +53,15 @@ public class MainController {
         return "addDogodek";
     }
     
+    @RequestMapping(value = { "/registracijaorganizator" }, method = RequestMethod.GET)
+    public String registracijaorganizator(Model model) {
+    	
+    	
+ 
+ 
+        return "registracijaorganizator";
+    }
+    
     
 //    @RequestMapping(method = RequestMethod.GET)
 //    ResponseEntity main(@RequestParam(name = 'trajanje', 'konecPrijav','konecOdjav') 
