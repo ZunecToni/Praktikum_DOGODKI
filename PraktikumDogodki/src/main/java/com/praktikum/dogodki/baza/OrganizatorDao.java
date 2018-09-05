@@ -17,6 +17,7 @@ public class OrganizatorDao {
 	
 	@Autowired
 	static
+	
 	JdbcTemplate jdbcTemplate;
 
 	public void addOrganizator(String ime, String priimek, String email) {
@@ -30,14 +31,14 @@ public class OrganizatorDao {
 		List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql);
 		for (Map row : rows) {
 			
-			
+			int id = (Integer) row.get("id");
 			 String ime= (String)row.get("ime");
 			 String priimek= (String)row.get("priimek");
 			 String email= (String)row.get("email");
 			 
 			
 
-			ret.add(new Organizator(ime, priimek, email));
+			ret.add(new Organizator(id,ime, priimek, email));
 		}
 		return ret;
 	}

@@ -1,22 +1,33 @@
 
- 
- package com.praktikum.dogodki.entities;
 
+package com.praktikum.dogodki.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+
+@Entity
 public class Prijava {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	String ime;
 	String priimek;
 	String email;
 	int Ocena;
 	String prijava;
 	String status; 
-	
-	 
+
+
 
 	public Prijava (String ime, String priimek, String email ) {
 		this.ime = ime;
 		this.priimek = priimek;
 		this.email = email;
-		
+
 	}
 	public Prijava (String ime, String priimek, String email,int Ocena,String prijava,String status ) {
 		this.ime = ime;
@@ -25,7 +36,7 @@ public class Prijava {
 		this.Ocena = Ocena;
 		this.prijava = prijava;
 		this.status=status;
-		
+
 	}
 
 
@@ -48,7 +59,7 @@ public class Prijava {
 		this.priimek = priimek;
 	}
 
- 
+
 	public String getEmail() {
 		return email;
 	}
@@ -60,15 +71,15 @@ public class Prijava {
 
 
 
-	
-	
+
+
 	public String toString() {
 		return "Uporabnik " + ime+ " " + priimek +"/n"+
-		"Email : "+ email + "/n";
-		
+				"Email : "+ email + "/n";
+
 	}
-	
-	
-	
+
+
+
 
 }

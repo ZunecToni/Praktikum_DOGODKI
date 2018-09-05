@@ -1,5 +1,4 @@
 //package com.praktikum.dogodki.baza;
-//import java.sql.Date;
 //
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
@@ -8,22 +7,34 @@
 //
 //@Entity
 //public class Organizatorji {
+//	
 //	@Id
 //	@GeneratedValue(strategy=GenerationType.AUTO)
-//	private Long id;
+//	private int id;
 //	private String ime;	
 //	private String priimek;
 //	private String email;
+//	
+//	
+//	public Organizatorji(int id, String ime, String priimek, String email) {
+//		super();
+//		this.id = id;
+//		this.ime = ime;
+//		this.priimek = priimek;
+//		this.email = email;
+//	}
 //
-//	public Long getId() {
+//
+//	public int getId() {
 //		return id;
 //	}
 //
 //
-//	public void setId(Long id) {
+//	public void setId(int id) {
 //		this.id = id;
 //	}
-//	
+//
+//
 //	public String getIme() {
 //		return ime;
 //	}
@@ -53,7 +64,8 @@
 //		this.email = email;
 //	}
 //
-//
+//	
+//	
 //}
 //
 //

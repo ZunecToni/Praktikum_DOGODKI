@@ -28,6 +28,12 @@
 <input id="konec" type="date" name="trajanje">
 <input id="konecCas" type="time" name="trajanje"><br>
 
+<label for="konec">"konecPrijav":</label>
+<input id="zacetekPrijav" type="date" name="konecPrijav"><br>
+
+<label for="konec">konecOdjav:</label>
+<input id="konec" type="date" name="konecOdjav"><br>
+
 <label for="opis">Opis:</label><br>
 <textarea rows="4" cols="25" id="opis" type="text" name="opis" placeholder="opisite dogodek.">
 </textarea><br>
@@ -44,6 +50,8 @@
 <label for="povabilo">Povabilo?
 <input id="povabilo" type="checkbox" name="potrebnoPovabilo" ></label><br>
 
+<label for="povabilo">status?
+<input id="povabilo" type="text" name="status" ></label><br>
 
 
 

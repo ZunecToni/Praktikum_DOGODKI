@@ -18,11 +18,11 @@ public class DogodekDao {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	public int addDogodek(String naziv, String opis, String lokacija, Date zacetek, Date trajanje, Date konecPrijav,
-			Date konecOdjav, int minOseb, int maxOseb, String status, boolean potrebnoPovabilo) {
+	public int addDogodek(String naziv, String opis, String lokacija, String zacetek, String trajanje, String konecPrijav,
+			String konecOdjav, int minOseb, int maxOseb, String status, boolean potrebnoPovabilo) {
 		
-		String sql ="INSERT INTO DOGODEK ( naziv,  opis,  lokacija,  zacetek,  trajanje,  konecPrijav,"
-				+ " konecOdjav,  minOseb,  maxOseb,  status,  potrebnoPovabilo) values(?,?,?,?,?,?,?,?,?,?,?)";
+		
+		String sql ="INSERT INTO DOGODEK (naziv,  opis,  lokacija,  zacetek,  trajanje,  konec_Prijav, konec_Odjav,  min_Oseb,  max_Oseb,  status,  potrebno_Povabilo) values(?,?,?,?,?,?,?,?,?,?,?)";
 
 		return jdbcTemplate.update(sql, new Object[]{naziv,  opis,  lokacija,  zacetek,  trajanje,  konecPrijav, konecOdjav,  minOseb,  maxOseb,  status,  potrebnoPovabilo});
 		
@@ -45,21 +45,21 @@ public class DogodekDao {
 		List<Map<String,Object>> rows = jdbcTemplate.queryForList(sql);
 		for (Map row : rows) {
 			
-			
+			int id = (Integer)row.get("id");
 			 String naziv= (String)row.get("naziv");
 			 String opis= (String)row.get("opis");
 			 String lokacija= (String)row.get("lokacija");
-			 Date zacetek= (Date)row.get("zacetek");
-			 Date trajanje= (Date)row.get("trajanje");
-			 Date konecPrijav= (Date)row.get("konecPrijav");
-			 Date konecOdjav= (Date)row.get("konecOdjav");
+			 String zacetek= (String)row.get("zacetek");
+			 String trajanje= (String)row.get("trajanje");
+			 String konecPrijav= (String)row.get("konecPrijav");
+			 String konecOdjav= (String)row.get("konecOdjav");
 			 int minOseb= (Integer) row.get("minOseb");
 			 int maxOseb= (Integer) row.get("maxOseb");
 			 String status= (String)row.get("status");
 			 boolean potrebnoPovabilo = (Boolean) row.get("potrebnoPovabilo");
 			
 
-			ret.add(new Dogodek(naziv, opis, lokacija, zacetek, trajanje, konecPrijav, konecOdjav, minOseb, maxOseb, status, potrebnoPovabilo));
+			ret.add(new Dogodek(id,naziv, opis, lokacija, zacetek, trajanje, konecPrijav, konecOdjav, minOseb, maxOseb, status, potrebnoPovabilo));
 		}
 		return ret;
 	}
