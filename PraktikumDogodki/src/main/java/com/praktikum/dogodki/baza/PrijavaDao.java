@@ -28,7 +28,7 @@ public class PrijavaDao {
         	String ime = (String) row.get("opis");
         	String priimek = (String) row.get("priimek");
         	String email = (String) row.get("email");
-        	int Ocena = (int) row.get("Ocena");
+        	int Ocena = (Integer) row.get("Ocena");
         	String prijava = (String) row.get("prijava");
         	String status = (String) row.get("status");
 

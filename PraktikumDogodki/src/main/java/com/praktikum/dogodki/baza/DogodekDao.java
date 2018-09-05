@@ -53,10 +53,10 @@ public class DogodekDao {
 			 Date trajanje= (Date)row.get("trajanje");
 			 Date konecPrijav= (Date)row.get("konecPrijav");
 			 Date konecOdjav= (Date)row.get("konecOdjav");
-			 int minOseb= (int)row.get("minOseb");
-			 int maxOseb= (int)row.get("maxOseb");
+			 int minOseb= (Integer) row.get("minOseb");
+			 int maxOseb= (Integer) row.get("maxOseb");
 			 String status= (String)row.get("status");
-			 boolean potrebnoPovabilo = (boolean)row.get("potrebnoPovabilo");
+			 boolean potrebnoPovabilo = (Boolean) row.get("potrebnoPovabilo");
 			
 
 			ret.add(new Dogodek(naziv, opis, lokacija, zacetek, trajanje, konecPrijav, konecOdjav, minOseb, maxOseb, status, potrebnoPovabilo));
