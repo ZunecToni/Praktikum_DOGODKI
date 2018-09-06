@@ -29,15 +29,17 @@ public class DogodekDao {
 		//https://stackoverflow.com/questions/23702041/failed-to-convert-property-value-of-type-java-lang-string-to-required-type-java
 		
 	} 	
-	public int addDogodek(String naziv) {
-		
-		String sql ="INSERT INTO DOGODEK ( naziv) values(?)";
-
-		return jdbcTemplate.update(sql, new Object[]{naziv});
-		
-		//https://stackoverflow.com/questions/23702041/failed-to-convert-property-value-of-type-java-lang-string-to-required-type-java
-		
-	} 
+	
+	
+//	public int addDogodek(String naziv) {
+//		
+//		String sql ="INSERT INTO DOGODEK ( naziv) values(?)";
+//
+//		return jdbcTemplate.update(sql, new Object[]{naziv});
+//		
+//		//https://stackoverflow.com/questions/23702041/failed-to-convert-property-value-of-type-java-lang-string-to-required-type-java
+//		
+//	} 
 	
 	public List<Dogodek> getVseDogodke(){
 		String sql = "SELECT * FROM DOGODEK";

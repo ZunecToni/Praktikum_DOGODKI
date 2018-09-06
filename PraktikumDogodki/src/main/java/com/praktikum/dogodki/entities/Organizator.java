@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Organizator {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String ime;	
 	private String priimek;

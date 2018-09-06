@@ -13,7 +13,8 @@ import javax.persistence.Id;
 public class Prijava {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	int id;
 	String ime;
 	String priimek;
 	String email;
@@ -39,6 +40,14 @@ public class Prijava {
 
 	}
 
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getIme() {
 		return ime;
