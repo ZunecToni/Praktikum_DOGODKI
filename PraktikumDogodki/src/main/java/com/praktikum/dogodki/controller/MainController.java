@@ -70,6 +70,13 @@ public class MainController {
 //        return ResponseEntity.noContent().build()
 //    }
     
+    @RequestMapping(value = { "/listDogodek" }, method = RequestMethod.GET)
+    public String listDogodek(Model model) {
+ 
+ 
+        return "listDogodek";
+    }
+    
      
         @RequestMapping("/listDogodek")
         public String listDogodek() {

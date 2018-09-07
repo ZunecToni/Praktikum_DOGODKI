@@ -17,11 +17,19 @@ TEST
           <th>naziv</th>
           <th>opis</th>
         </tr>
-        <c:forEach  items="${organizator}" var ="organizator">
+        <c:forEach  items="${dogodek}" var ="dogodek">
         <tr>
-          <td>${organizator.ime}</td>
-          <td>${organizator.priimek}</td>
-          <td>${organizator.email}</td>
+          <td>${dogodek.naziv}</td>
+          <td>${dogodek.opis}</td>
+          <td>${dogodek.lokacija}</td>
+          <td>${dogodek.zacetek}</td>
+          <td>${dogodek.trajanje}</td>
+          <td>${dogodek.konecPrijav}</td>
+          <td>${dogodek.konecOdjav}</td>
+          <td>${dogodek.minOseb}</td>
+          <td>${dogodek.maxOseb}</td>
+          <td>${dogodek.status}</td>
+          <td>${dogodek.potrebnoPovabilo}</td>
         </tr>
         </c:forEach>
       </table>

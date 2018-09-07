@@ -22,22 +22,22 @@ public class BazaController {
 	
 	@RequestMapping(value = {"/addDogodek"}, method = RequestMethod.GET)
 	public String dodajDogodek(
-			@RequestParam(value="naziv")String naziv,
-			@RequestParam(value="opis")String opis,
-			@RequestParam(value="lokacija")String lokacija,
-			@RequestParam(value="zacetek")String zacetek,
-			@RequestParam(value="trajanje")String trajanje,
-			@RequestParam(value="konecPrijav")String konecPrijav,
-			@RequestParam(value="konecOdjav")String konecOdjav,
-			@RequestParam(value="minOseb")int minOseb,
-			@RequestParam(value="maxOseb")int maxOseb,
-			@RequestParam(value="status")String status,
-			@RequestParam(value="potrebnoPovabilo")boolean potrebnoPovabilo 
+			@RequestParam(value="naziv", required=true)String naziv,
+			@RequestParam(value="opis", required=false)String opis,
+			@RequestParam(value="lokacija", required=true)String lokacija,
+			@RequestParam(value="zacetek", required=true)String zacetek,
+			@RequestParam(value="trajanje", required=true)String trajanje,
+			@RequestParam(value="konecPrijav", required=true)String konecPrijav,
+			@RequestParam(value="konecOdjav", required=true)String konecOdjav,
+			@RequestParam(value="minOseb", required=true)int minOseb,
+			@RequestParam(value="maxOseb", required=false)int maxOseb,
+			@RequestParam(value="status", required=false)String status,
+			@RequestParam(value="potrebnoPovabilo", required=false)boolean potrebnoPovabilo 
 			)
 	{
 		dogodekDao.addDogodek(naziv, opis, lokacija, zacetek, trajanje, konecPrijav, 
 				konecOdjav, minOseb, maxOseb, status, potrebnoPovabilo);
-		return "redirect:/listDogodkov";
+		return "listDogodek";
 	}
 	
 	@RequestMapping(value = { "seznamDogodkov"}, method = RequestMethod.GET)
